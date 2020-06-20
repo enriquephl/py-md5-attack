@@ -6,10 +6,10 @@ python2 <known message> <md5 digest> <string to append> [length of secret]
 ```
 
 # Example
-> Original Message: "hello"
-> Secret: "welcome"
-> Length of Secret: 7
-> MD5 (secret + Original Message): "3752460bd048f6527619c4f6067d3afd"
+> Original Message: "hello"   
+> Secret: "welcome"   
+> Length of Secret: 7   
+> MD5 (secret + Original Message): "3752460bd048f6527619c4f6067d3afd"   
 > Appened Message: "good"
 ```sh
 python2 main.py "hello" "3752460bd048f6527619c4f6067d3afd" "good" 7
