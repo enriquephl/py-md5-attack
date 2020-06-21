@@ -12,15 +12,10 @@ if __name__ == "__main__" :
   appended_message = sys.argv[3]
   secret_length = int(sys.argv[4])
 
-  # Performing the hash length extension.
-  # We set the md5 state to the first block's hash value.
-  # This is the MAC value we got from the cookie
   extended_hash = pymd5.md5(state=original_digest.decode("hex"), count=512)
   extended_hash.update(appended_message)
   extended_digest = extended_hash.hexdigest()
 
-  # This just shows that the HLE produced the same digest as
-  # secret | message | padding | message_2
   secret="welcome"
   full_message_hash = pymd5.md5()
   full_message_hash.update(secret + original_message + pymd5.padding((len(original_message)+secret_length) * 8) + appended_message)
